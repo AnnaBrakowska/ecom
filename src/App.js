@@ -1,6 +1,8 @@
 import './App.scss';
 import React from 'react'
-import { HomePage } from './homepage.component.jsx'
+import { HomePage } from './pages/homepage/homepage.component.jsx'
+import ShopPage from './pages/shop/shop.component.jsx'
+import { Switch, Route } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -13,7 +15,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <HomePage />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/SHOP' component={ShopPage} />
+      </Switch>
     );
   }
   }
