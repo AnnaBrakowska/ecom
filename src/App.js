@@ -1,9 +1,9 @@
 import './App.scss';
 import React from 'react'
-import { HomePage } from './pages/homepage/homepage.component.jsx'
-import ShopPage from './pages/shop/shop.component.jsx'
-import { Switch, Route } from 'react-router-dom';
-
+import { HomePage } from './pages/homepage/homepage.component'
+import ShopPage from './pages/shop/shop.component'
+import { Header } from './components/header/header.component'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
   constructor() {
@@ -12,15 +12,17 @@ class App extends React.Component {
     }
   }
 
-
   render() {
     return (
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/SHOP' component={ShopPage} />
-      </Switch>
-    );
-  }
+        <div>
+          <Header/>
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/shop' component={ShopPage} />
+          </Switch>
+        </div>
+      )
+    }
   }
 
 
